@@ -1,0 +1,13 @@
+
+ We have chosen to do the first task.
+ Question 1:
+   Prevent the client from displaying the text it has sent. The server
+   can do this filtering easily, but consider that the return of a text
+   to the client is a valuable acknowledgement that the server actually
+   delivered the text, and a diagnostic on how long it took to do so.
+   Hint: you cannot rely on the client's user name string, as this can
+   be set to anything on any client.
+
+ We made the server to do the filtering. The most significant part was to keep track of who has sent the message,
+ so while sending the message i did send also the object of the @sender in the RUN class and with a simple comparison
+ We did the filtering.

@@ -1,0 +1,90 @@
+2018-08-24/fki Version 7
+
+Programming of Interactive Systems, lab 1
+
+You are encouraged to tackle a few of the optional tasks in order to
+familiarise yourself with the software and source code.
+
+
+Optional tasks for the chat-programs.
+
+* When the client announces added and removed servers, the output is
+  different from what the user sees in the .list command. Make the
+  announcements present the same text as the .list command.
+
+* Add to the client the option to provide a sender name on the
+  commandline.
+
+
+Mandatory tasks, choose one:
+
+1 Prevent the client from displaying the text it has sent. The server
+  can do this filtering easily, but consider that the return of a text
+  to the client is a valuable acknowledgement that the server actually
+  delivered the text, and a diagnostic on how long it took to do so.
+  Hint: you cannot rely on the client's user name string, as this can
+  be set to anything on any client.
+
+2 Enable all clients connected to the service to see whenever a client
+  joins or leaves the chat. Add a user command to the client that
+  allows the user to list users currently joined to the service. If
+  the client uses the .name command, this should be seen by all
+  connected clients.
+
+  With that done, then also do one of:
+
+  2a Make the user information useful to the maintainer of the chat
+     service, so that the chat server console prints when someone
+     connects and disconnects. In the case of a disconnect, also print
+     session time (time between connect and disconnect), and how many
+     messages or Kbytes that user has sent.
+
+  2b Give the client user the ability to block a user (that user's
+     texts are not displayed by the client doing the
+     blocking). Blocked users should be indicated in the user name
+     list. It must not be possible to bypass a block by changing the
+     name with the .name command. Blocks are not required to be
+     maintained across client restarts.
+
+3 Develop the client and service to allow the sending and receiving of
+  files. Consider the impact on security. In particular, each user
+  should be able to reject an offered file.
+
+4 Implement a chat-bot (a modified client) that can participate in a
+  discussion with two or more other users. This means that it must be
+  able to recognize that different people are talking, and be able to
+  direct its output at a single person, or everyone. The chat-bot does
+  not have to be intelligent or even clever. For inspiration, have a
+  look at https://github.com/codeanticode/eliza. (If you do this,
+  connect two chat-bots to the same server and watch what happens.)
+
+5 Create a super-server that connects like a client to ordinary
+  servers. Have the super-server join with all ordinary servers to
+  create the illusion that all users are in the same chat.
+  Hint: the selective flooding routing algorithm.
+
+6 Add an AFK (Away From Keyboard) detector that automatically notifies
+  the other clients when someone has been inactive for a certain
+  period of time. The message should be automatically generated when
+  the timeout period expires. Add a command in the client for turning
+  on and off the display of such automated messages. Design decisions:
+  Should the detector be in the client or in the server? Should it be
+  possible for the user to turn off the detector? How long should the
+  timeout period be? Should it be the same for everyone or should it
+  be possible to customize for each client?
+
+
+The work is preferably done in groups of two, but singleton groups are
+allowed.
+
+The group should do the following:
+
+- Implement your selected task on the provided software.
+
+- Write and print a report (2-3 pgs) in which you:
+
+  	* indicate the choosen task
+
+	* document your design decisions and implementation strategy
+
+- Prepare a short oral presentation and demo of the running system.
